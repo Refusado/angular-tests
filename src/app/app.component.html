@@ -1,8 +1,57 @@
-<h1 class="text-success text-center" >Angular Diretivas</h1>
+<h1 class="text-center" >Angular Diretivas</h1>
 
+<!-- DIRETIVAS DE ATRIBUTOS -->
 <div
-    [ngStyle]="{ background: count < 5 ? 'red' : 'blue' }"
-    [ngClass]="{ custom: count > 5 }"
+    [ngClass]="{
+        'bg-success text-light': true,
+        'bg-warning text-dark': count >= 5 }"
 >
     <h2 class="text-center">Contador: {{ count }}</h2>
 </div>
+
+<!-- DIRETIVAS ESTRUTURAIS -->
+<!-- <h5 class="text-center text-danger" *ngIf="count >= 5 else safe" >Valor muito alto!</h5>
+
+<ng-template #safe>
+    <h5 class="text-center">Valor seguro :)</h5>
+</ng-template> -->
+<!-- USANDO THEN/ELSE -->
+<div *ngIf="count >= 5; then danger else safe"></div>
+
+<ng-template #safe><h5 class="text-center text-dark">Valor seguro :)</h5></ng-template>
+<ng-template #danger><h5 class="text-center text-danger">Valor muito alto!</h5></ng-template>
+
+
+<ul [ngSwitch]="count" class="list-group mx-auto col-3">
+
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="0">
+        Counter é igual a 0
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="2">
+        Counter é igual a 2
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="4">
+        Counter é igual a 4
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="6">
+        Counter é igual a 6
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="8">
+        Counter é igual a 8
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchDefault>
+        Valor impar! ( {{ count }} )
+    </li>
+</ul>
