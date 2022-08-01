@@ -10,19 +10,20 @@
 </div>
 
 <!-- DIRETIVAS ESTRUTURAIS -->
-<!-- <h5 class="text-center text-danger" *ngIf="count >= 5 else safe" >Valor muito alto!</h5>
+<!-- ESTUTURA IF -->
+<h5 class="text-center text-danger" *ngIf="count >= 5 else safe" >Valor muito alto!</h5>
 
 <ng-template #safe>
     <h5 class="text-center">Valor seguro :)</h5>
-</ng-template> -->
-<!-- USANDO THEN/ELSE -->
+</ng-template>
+<!-- ESTRUTURA IF COM THEN/ELSE EXPANDIDO-->
 <div *ngIf="count >= 5; then danger else safe"></div>
 
 <ng-template #safe><h5 class="text-center text-dark">Valor seguro :)</h5></ng-template>
 <ng-template #danger><h5 class="text-center text-danger">Valor muito alto!</h5></ng-template>
 
-
-<ul [ngSwitch]="count" class="list-group mx-auto col-3">
+<!-- ESTRUTURA SWITCH CASE -->
+<ul [ngSwitch]="count" class="list-group mx-auto col-6">
 
     <li 
         class="list-group-item"
@@ -54,4 +55,22 @@
         *ngSwitchDefault>
         Valor impar! ( {{ count }} )
     </li>
+</ul>
+
+<!-- ESTUTURA FOR -->
+<ul class="list-group mx-auto col-6 my-3">
+    <li
+        class="list-group-item"
+        *ngFor="let pessoa of pessoas">
+        O nome da pessoa é {{ pessoa.nome }}
+    </li>
+</ul>
+
+<!-- ESTRUTURA FOR EXTENDIDA -->
+<ul class="list-group mx-auto col-6 my-3">
+    <ng-template ngFor let-pessoa [ngForOf]="pessoas">
+        <li class="list-group-item">
+            O nome da pessoa é {{ pessoa.nome }}
+        </li>
+    </ng-template>
 </ul>
