@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
     count: number = 0;
+    nome: string = "Renan Freitas";
+    text: string = "";
 
     pessoas = [
         {
@@ -40,4 +42,7 @@ export class AppComponent implements OnInit {
         }, 1000);
     }
 
+    clicou(): void {
+        console.info("Botão clicado.", this.nome);
+    }
 }

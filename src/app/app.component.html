@@ -74,3 +74,18 @@
         </li>
     </ng-template>
 </ul>
+
+<!-- DATA BINDING -->
+<!-- One-way data binding envia dados do template para o componente ou do componente para o template -->
+<!-- Two-way data biding envia do template para o componente e do componente para o template ao mesmo tempo -->
+<div class="col-4 mx-auto my-3">
+    <h3 appMarcaTexto corDeFundo="red" corDoTexto="yellow">{{ nome }}</h3>
+    <button class="btn btn-success col-4" (click)="clicou()">Clique aqui</button>
+</div>
+
+<div class="col-4 mx-auto">
+    <input
+    [(ngModel)]="text"
+    type="text" class="form-control" placeholder="Two-way data binding">
+    <h4>Saída: {{ text }}</h4>
+</div>
