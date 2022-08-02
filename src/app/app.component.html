@@ -62,7 +62,7 @@
     <li
         class="list-group-item"
         *ngFor="let pessoa of pessoas">
-        O nome da pessoa é {{ pessoa.nome }}
+        O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName }}
     </li>
 </ul>
 
@@ -70,10 +70,13 @@
 <ul class="list-group mx-auto col-6 my-3">
     <ng-template ngFor let-pessoa [ngForOf]="pessoas">
         <li class="list-group-item">
-            O nome da pessoa é {{ pessoa.nome }}
+            O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName }}
         </li>
     </ng-template>
 </ul>
+
+<!-- USANDO A LISTA EM UM COMPONENTE SEPARADO COM SERVIÇOS -->
+<app-list-people></app-list-people>
 
 <!-- DATA BINDING -->
 <!-- One-way data binding envia dados do template para o componente ou do componente para o template -->
