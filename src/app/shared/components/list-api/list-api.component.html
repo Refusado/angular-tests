@@ -1,0 +1,14 @@
+<section class="d-flex align-items-center justify-content-center flex-wrap gap-2">
+    <div class="card" style="width: 18rem;"
+    *ngFor="let personagem of personagens">
+        <img src="{{ personagem.image }}" class="card-img-top" alt="{{ personagem.name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ personagem.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Status:</b> {{ personagem.status }}</li>
+            <li class="list-group-item"><b>Espécie:</b> {{ personagem.species }}</li>
+            <li class="list-group-item"><b>Gênero:</b> {{ personagem.gender }}</li>
+        </ul>
+    </div>
+</section>
