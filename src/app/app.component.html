@@ -1,4 +1,5 @@
 <h1 class="text-center" >Angular Diretivas</h1>
+<app-title></app-title>
 
 <!-- DIRETIVAS DE ATRIBUTOS -->
 <div
@@ -25,32 +26,32 @@
 <!-- ESTRUTURA SWITCH CASE -->
 <ul [ngSwitch]="count" class="list-group mx-auto col-6">
 
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchCase="0">
         Counter é igual a 0
     </li>
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchCase="2">
         Counter é igual a 2
     </li>
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchCase="4">
         Counter é igual a 4
     </li>
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchCase="6">
         Counter é igual a 6
     </li>
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchCase="8">
         Counter é igual a 8
     </li>
-    <li 
+    <li
         class="list-group-item"
         *ngSwitchDefault>
         Valor impar! ( {{ count }} )

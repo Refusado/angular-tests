@@ -1,3 +1,4 @@
+import { PagesModule } from './pages/pages.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,8 @@ import { ListApiComponent } from './shared/components/list-api/list-api.componen
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PagesModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]
